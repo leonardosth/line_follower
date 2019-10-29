@@ -59,6 +59,19 @@ void setup() {
 }
 
 
+void funcao(int vele, int veld){
+   digitalWrite(STBY, HIGH);
+    
+    digitalWrite(RIGHT_IN2, LOW);
+    digitalWrite(RIGHT_IN1, HIGH);
+    analogWrite(RIGHT_PMW, veld);
+
+    digitalWrite(LEFT_IN2, HIGH);
+    digitalWrite(LEFT_IN1, LOW);
+    analogWrite(LEFT_PMW, vele);
+}
+
+
 
 void loop() {
   
@@ -87,178 +100,55 @@ void loop() {
  Serial.print(" ");
  Serial.println("");
  
-if(luz1 < 200 and luz2 < 200){
 
-  digitalWrite(STBY, HIGH);
-    
-  digitalWrite(RIGHT_IN2, LOW);
-  digitalWrite(RIGHT_IN1, HIGH);
-  analogWrite(RIGHT_PMW, 150);
-
-  digitalWrite(LEFT_IN2, HIGH);
-  digitalWrite(LEFT_IN1, LOW);
-  analogWrite(LEFT_PMW, 0);
-
+if (luz1 < 200 && luz2 < 200)
+{
+  funcao(0, 110);
 }
-
-if(luz1 < 200){
-
-  digitalWrite(STBY, HIGH);
-    
-  digitalWrite(RIGHT_IN2, LOW);
-  digitalWrite(RIGHT_IN1, HIGH);
-  analogWrite(RIGHT_PMW, 150);
-
-  digitalWrite(LEFT_IN2, HIGH);
-  digitalWrite(LEFT_IN1, LOW);
-  analogWrite(LEFT_PMW, 0);
-
+  else if (luz2 < 200 && luz3 < 200)
+{
+  funcao(100, 125);  
 }
-
-else if (luz5 < 200 and luz6 < 200){
-
-  digitalWrite(STBY, HIGH);
-    
-  digitalWrite(RIGHT_IN2, LOW);
-  digitalWrite(RIGHT_IN1, HIGH);
-  analogWrite(RIGHT_PMW, 0);
-
-  digitalWrite(LEFT_IN2, HIGH);
-  digitalWrite(LEFT_IN1, LOW);
-  analogWrite(LEFT_PMW, 150);
+  else if (luz3 < 200 && luz4 < 200)
+{
+  funcao(125, 125);
 }
-
-else if (luz6 < 200){
-
-  digitalWrite(STBY, HIGH);
-    
-  digitalWrite(RIGHT_IN2, LOW);
-  digitalWrite(RIGHT_IN1, HIGH);
-  analogWrite(RIGHT_PMW, 0);
-
-  digitalWrite(LEFT_IN2, HIGH);
-  digitalWrite(LEFT_IN1, LOW);
-  analogWrite(LEFT_PMW, 150);
+else if (luz4 < 200 && luz5 < 200)
+{
+  funcao(125, 100);
 }
-
-else if (luz2 < 200 and luz3 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 120);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 90);
-  
-  }
-  else if (luz2 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 120);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 90);
-  
-  }
-
-else if (luz3 < 200 and luz4 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 120);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 120);
-  
-  }
+  else if (luz5 < 200 && luz6 < 200)
+{
+  funcao(110, 0);
+}
+else if(luz1 < 200)
+{
+  funcao(0, 120);
+} 
+  else if(luz2 < 200)
+{
+  funcao(20, 100);
+}
   else if (luz3 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 120);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 120);
-  
-  }
-
+{
+  funcao(115, 125);
+}
   else if (luz4 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 120);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 120);
-  
-  }
-
-else if (luz4 < 200 and luz5 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 90);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 120);
-  
-  }
+{
+  funcao(125, 115);
+}
   else if (luz5 < 200)
- {
-
-    digitalWrite(STBY, HIGH);
-    
-    digitalWrite(RIGHT_IN2, LOW);
-    digitalWrite(RIGHT_IN1, HIGH);
-    analogWrite(RIGHT_PMW, 90);
-
-    digitalWrite(LEFT_IN2, HIGH);
-    digitalWrite(LEFT_IN1, LOW);
-    analogWrite(LEFT_PMW, 120);
-  
-  }
-
-  else{
-
-    digitalWrite(STBY, HIGH);
-    
-  digitalWrite(RIGHT_IN2, LOW);
-  digitalWrite(RIGHT_IN1, HIGH);
-  analogWrite(RIGHT_PMW, 0);
-
-  digitalWrite(LEFT_IN2, HIGH);
-  digitalWrite(LEFT_IN1, LOW);
-  analogWrite(LEFT_PMW, 0);
-  }
-
-  
-  
-
+{
+  funcao(100, 20);
+}
+  else if (luz6 < 200)
+{
+  funcao(120, 0);
+}
+  else
+{
+  funcao(0, 0);
+}
 
 }
 
